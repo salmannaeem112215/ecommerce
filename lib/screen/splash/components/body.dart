@@ -67,9 +67,7 @@ class _BodyState extends State<Body> {
                     ),
                     DefaultButton(
                       text: 'Continue',
-                      press: () {
-                        print('Continue');
-                      },
+                      press: () {},
                     ),
                     const Spacer(),
                   ],
