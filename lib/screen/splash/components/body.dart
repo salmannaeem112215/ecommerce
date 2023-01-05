@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ecommerce/constants.dart';
 import 'package:flutter_ecommerce/size_config.dart';
+import '../../../components/default_button.dart';
+import './splash_content.dart';
 
 class Body extends StatefulWidget {
   const Body({Key? key}) : super(key: key);
@@ -10,6 +12,7 @@ class Body extends StatefulWidget {
 }
 
 class _BodyState extends State<Body> {
+  int currentPage = 0;
   final List<Map<String, String>> _splashData = [
     {
       "text": "Welcome to AL-BURAQ, Let's shop!",
@@ -34,6 +37,11 @@ class _BodyState extends State<Body> {
             Expanded(
                 flex: 3,
                 child: PageView.builder(
+                  onPageChanged: (value) {
+                    setState(() {
+                      currentPage = value;
+                    });
+                  },
                   itemCount: _splashData.length,
                   itemBuilder: (context, index) => SplashContent(
                     text: _splashData[index]["text"]!,
@@ -42,49 +50,48 @@ class _BodyState extends State<Body> {
                 )),
             Expanded(
               flex: 2,
-              child: SizedBox(),
+              child: Padding(
+                padding: EdgeInsets.all(getProportionalScreenWidth(20)),
+                child: Column(
+                  children: [
+                    const Spacer(),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: List.generate(
+                        _splashData.length,
+                        (index) => buildDot(index: index),
+                      ),
+                    ),
+                    const Spacer(
+                      flex: 4,
+                    ),
+                    DefaultButton(
+                      text: 'Continue',
+                      press: () {
+                        print('Continue');
+                      },
+                    ),
+                    const Spacer(),
+                  ],
+                ),
+              ),
             ),
           ],
         ),
       ),
     );
   }
-}
 
-class SplashContent extends StatelessWidget {
-  const SplashContent({
-    Key? key,
-    required this.text,
-    required this.image,
-  }) : super(key: key);
-  final String text, image;
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        const Spacer(),
-        Text(
-          'AL-BURAQ',
-          style: TextStyle(
-            fontSize: getProportionalScreenWidth(36),
-            color: kPrimaryColor,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-        Text(
-          text,
-          textAlign: TextAlign.center,
-        ),
-        const Spacer(
-          flex: 2,
-        ),
-        Image.asset(
-          image,
-          height: getProportionateScreenHeight(265),
-          width: getProportionalScreenWidth(235),
-        ),
-      ],
+  AnimatedContainer buildDot({required int index}) {
+    return AnimatedContainer(
+      duration: kAnimationDuration,
+      margin: const EdgeInsets.only(right: 5),
+      height: 6,
+      width: currentPage == index ? 20 : 6,
+      decoration: BoxDecoration(
+        color: currentPage == index ? kPrimaryColor : const Color(0xffd8d8d8),
+        borderRadius: BorderRadius.circular(3),
+      ),
     );
   }
 }
