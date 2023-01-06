@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ecommerce/constants.dart';
-import 'package:flutter_ecommerce/size_config.dart';
+
+import '../../../components/social_card.dart';
+import '../../../size_config.dart';
+import 'sign_form.dart';
 
 class Body extends StatelessWidget {
   const Body({Key? key}) : super(key: key);
@@ -14,48 +17,62 @@ class Body extends StatelessWidget {
         padding: EdgeInsets.symmetric(
           horizontal: getProportionalScreenWidth(20),
         ),
-        child: Column(
-          children: [
-            Text(
-              'Welcome Back',
-              style: TextStyle(
-                color: Colors.black,
-                fontSize: getProportionalScreenWidth(28),
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              SizedBox(height: SizeConfig.screenHeight * 0.04),
+              Text(
+                'Welcome Back',
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: getProportionalScreenWidth(28),
+                ),
               ),
-            ),
-            const Text(
-              "Sign In with your email and password \nor continue with social media",
-              textAlign: TextAlign.center,
-            ),
-            SignForm(),
-          ],
-        ),
-      ),
-    ));
-  }
-}
-
-class SignForm extends StatefulWidget {
-  const SignForm({Key? key}) : super(key: key);
-
-  @override
-  State<SignForm> createState() => _SignFormState();
-}
-
-class _SignFormState extends State<SignForm> {
-  @override
-  Widget build(BuildContext context) {
-    return Form(
-        child: Column(
-      children: [
-        TextFormField(
-          decoration: const InputDecoration(
-            labelText: 'Email',
-            hintText: 'Enter your email',
-            // suffixIcon:
+              const Text(
+                "Sign In with your email and password \nor continue with social media",
+                textAlign: TextAlign.center,
+              ),
+              SizedBox(height: SizeConfig.screenHeight * 0.07),
+              const SignForm(),
+              SizedBox(height: SizeConfig.screenHeight * 0.03),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  SocialCard(
+                    icon: "assets/icons/google-icon.svg",
+                    press: () {},
+                  ),
+                  SocialCard(
+                    icon: "assets/icons/facebook-2.svg",
+                    press: () {},
+                  ),
+                  SocialCard(
+                    icon: "assets/icons/twitter.svg",
+                    press: () {},
+                  ),
+                ],
+              ),
+              SizedBox(height: getProportionateScreenHeight(20)),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    'Don\'t have an account? ',
+                    style: TextStyle(fontSize: getProportionalScreenWidth(16)),
+                  ),
+                  Text(
+                    'Sign Up',
+                    style: TextStyle(
+                      fontSize: getProportionalScreenWidth(16),
+                      color: kPrimaryColor,
+                    ),
+                  ),
+                ],
+              )
+            ],
           ),
         ),
-      ],
+      ),
     ));
   }
 }
