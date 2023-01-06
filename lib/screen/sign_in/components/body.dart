@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ecommerce/constants.dart';
 import 'package:flutter_ecommerce/size_config.dart';
 
 class Body extends StatelessWidget {
@@ -48,9 +49,10 @@ class _SignFormState extends State<SignForm> {
         child: Column(
       children: [
         TextFormField(
-          decoration: InputDecoration(
+          decoration: const InputDecoration(
             labelText: 'Email',
             hintText: 'Enter your email',
+            // suffixIcon:
           ),
         ),
       ],
