@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_ecommerce/components/default_button.dart';
 import 'package:flutter_ecommerce/constants.dart';
 import 'package:flutter_ecommerce/screen/forget_password/forget_password_screen.dart';
+import 'package:flutter_ecommerce/screen/login_success/login_success_screen.dart';
 
 import '../../../components/form_error.dart';
 import '../../../size_config.dart';
@@ -46,7 +47,7 @@ class _SignFormState extends State<SignForm> {
                 GestureDetector(
                   onTap: () {
                     Navigator.pushNamed(
-                        context, ForgetPasswordScreen.nameRoute);
+                        context, ForgetPasswordScreen.routeName);
                   },
                   child: const Text(
                     'Forget Password',
@@ -65,9 +66,8 @@ class _SignFormState extends State<SignForm> {
                 press: () {
                   if (_formKey.currentState!.validate()) {
                     _formKey.currentState!.save();
-                    if (errors.isEmpty) {
-                      // code if no error
-                    }
+                    // code if no error
+                    Navigator.pushNamed(context, LoginSuccessScreen.routeName);
                   }
                 }),
           ],
@@ -100,11 +100,13 @@ class _SignFormState extends State<SignForm> {
           setState(() {
             errors.add(kEmailNullError);
           });
+          return "";
         } else if (!emailValidatorRegExp.hasMatch(value) &&
             !errors.contains(kInvalidEmailError)) {
           setState(() {
             errors.add(kInvalidEmailError);
           });
+          return "";
         }
         return null;
       },
@@ -137,10 +139,12 @@ class _SignFormState extends State<SignForm> {
           setState(() {
             errors.add(kPassNullError);
           });
+          return "";
         } else if (value.length < 8 && !errors.contains(kShortPassError)) {
           setState(() {
             errors.add(kShortPassError);
           });
+          return "";
         }
         return null;
       },
