@@ -9,7 +9,6 @@ void main() {
   runApp(const MyApp());
 }
 
-// Farjad Pagal ha
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
