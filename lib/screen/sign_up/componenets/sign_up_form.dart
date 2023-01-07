@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ecommerce/screen/complete_profhile/complete_profhile.dart';
 
 import '../../../components/custom_suffix_icond.dart';
 import '../../../components/default_button.dart';
@@ -48,7 +49,10 @@ class _SignUpFormState extends State<SignUpForm> {
           DefaultButton(
               text: 'Continue',
               press: () {
-                if (_formKey.currentState!.validate()) {}
+                if (_formKey.currentState!.validate()) {
+                  Navigator.pushNamed(
+                      context, CompleteProfhileScreen.routeName);
+                }
               }),
         ],
       ),

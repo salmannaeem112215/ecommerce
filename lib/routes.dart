@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ecommerce/screen/complete_profhile/complete_profhile.dart';
 import 'package:flutter_ecommerce/screen/login_success/login_success_screen.dart';
 import 'package:flutter_ecommerce/screen/sign_up/sign_up_screen.dart';
 
@@ -12,4 +13,5 @@ final Map<String, WidgetBuilder> routes = {
   ForgetPasswordScreen.routeName: (context) => const ForgetPasswordScreen(),
   LoginSuccessScreen.routeName: (context) => const LoginSuccessScreen(),
   SignUpScreen.routeName: (context) => const SignUpScreen(),
+  CompleteProfhileScreen.routeName: (context) => const CompleteProfhileScreen(),
 };

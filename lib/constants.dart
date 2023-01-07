@@ -26,3 +26,7 @@ const String kInvalidEmailError = "Please Enter your Valid Email";
 const String kPassNullError = "Please Enter your password";
 const String kShortPassError = "Password is too short";
 const String kMatchingPassError = "Passwords don't match";
+const String kFirstNameNullError = "Please Enter your first name";
+const String kLastNameNullError = "Please Enter your name name";
+const String kPhoneNumberNullError = "Please Enter your number";
+const String kAddressNullError = "Please Enter your address";
