@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ecommerce/size_config.dart';
+import './size_config.dart';
 
 const kPrimaryColor = Color(0xFFFF7643);
 const kPrimaryLightColor = Color(0xFFFFECDF);
@@ -30,3 +30,23 @@ const String kFirstNameNullError = "Please Enter your first name";
 const String kLastNameNullError = "Please Enter your name name";
 const String kPhoneNumberNullError = "Please Enter your number";
 const String kAddressNullError = "Please Enter your address";
+const String kOTPNullError = "Please Enter OTP code";
+const String kMatchingOTPError = "OTP code don't match";
+
+final otpInputDecoration = InputDecoration(
+  contentPadding: EdgeInsets.symmetric(
+    vertical: getProportionalScreenWidth(15),
+  ),
+  enabledBorder: otpOutlineInputBorder,
+  focusedBorder: otpOutlineInputBorder,
+  errorBorder: otpErrorOutlineInputBorder,
+  focusedErrorBorder: otpErrorOutlineInputBorder,
+);
+final otpOutlineInputBorder = OutlineInputBorder(
+  borderRadius: BorderRadius.circular(15),
+  borderSide: const BorderSide(color: kTextColor),
+);
+final otpErrorOutlineInputBorder = OutlineInputBorder(
+  borderRadius: BorderRadius.circular(15),
+  borderSide: const BorderSide(color: kPrimaryColor),
+);

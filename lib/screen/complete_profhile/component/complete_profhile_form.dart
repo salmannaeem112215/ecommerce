@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_ecommerce/components/default_button.dart';
 import 'package:flutter_ecommerce/components/form_error.dart';
 import 'package:flutter_ecommerce/constants.dart';
+import 'package:flutter_ecommerce/screen/otp/otp_screen.dart';
 import 'package:flutter_ecommerce/size_config.dart';
 
 import '../../../components/custom_suffix_icond.dart';
@@ -54,7 +55,7 @@ class _CompleteProfhileFormState extends State<CompleteProfhileForm> {
               press: () {
                 if (_formKey.currentState!.validate()) {
                   // optp screen
-
+                  Navigator.pushNamed(context, OTPScreen.routeName);
                 }
               }),
         ],

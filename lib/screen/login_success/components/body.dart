@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ecommerce/components/default_button.dart';
-import 'package:flutter_ecommerce/size_config.dart';
+
+import '../../../components/default_button.dart';
+import '../../../size_config.dart';
 
 class Body extends StatelessWidget {
   const Body({Key? key}) : super(key: key);

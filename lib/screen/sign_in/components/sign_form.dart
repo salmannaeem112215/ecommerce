@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ecommerce/components/default_button.dart';
-import 'package:flutter_ecommerce/constants.dart';
-import 'package:flutter_ecommerce/screen/forget_password/forget_password_screen.dart';
-import 'package:flutter_ecommerce/screen/login_success/login_success_screen.dart';
 
+import '../../forget_password/forget_password_screen.dart';
+import '../../login_success/login_success_screen.dart';
+import '../../../constants.dart';
+import '../../../components/default_button.dart';
 import '../../../components/form_error.dart';
 import '../../../size_config.dart';
 import '../../../components/custom_suffix_icond.dart';
