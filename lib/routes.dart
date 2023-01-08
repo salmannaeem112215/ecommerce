@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ecommerce/screen/home/home_screen.dart';
 
 import './screen/complete_profhile/complete_profhile.dart';
 import './screen/login_success/login_success_screen.dart';
@@ -16,4 +17,5 @@ final Map<String, WidgetBuilder> routes = {
   SignUpScreen.routeName: (context) => const SignUpScreen(),
   CompleteProfhileScreen.routeName: (context) => const CompleteProfhileScreen(),
   OTPScreen.routeName: (context) => const OTPScreen(),
+  HomeScreen.routeName: (context) => const HomeScreen(),
 };
