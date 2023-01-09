@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../size_config.dart';
-import './setion_title.dart';
+import 'section_title.dart';
 import './speacil_offer_card.dart';
 
 class SpeacilOffer extends StatelessWidget {
