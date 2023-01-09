@@ -11,6 +11,7 @@ const kPrimaryGradientColor = LinearGradient(
 const kSecondaryColor = Color(0xff979797);
 const kSecondaryDarkColor = Color.fromARGB(255, 92, 92, 92);
 const kTextColor = Color(0xff757575);
+const kDiscountCardColor = Color(0xFF4A3298);
 
 const kAnimationDuration = Duration(milliseconds: 200);
 final headingStyle = TextStyle(
