@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ecommerce/constants.dart';
 
 import '../../../size_config.dart';
 import './home_header.dart';
 import './discount_banner.dart';
+import './categories.dart';
+import 'speacil_offer.dart';
 
 class Body extends StatelessWidget {
   const Body({Key? key}) : super(key: key);
@@ -18,6 +19,10 @@ class Body extends StatelessWidget {
             const HomeHeader(),
             SizedBox(height: getProportionateScreenHeight(20)),
             const DiscountBanner(),
+            SizedBox(height: getProportionateScreenHeight(20)),
+            Categories(),
+            SizedBox(height: getProportionateScreenHeight(20)),
+            const SpeacilOffer(),
           ],
         ),
       ),

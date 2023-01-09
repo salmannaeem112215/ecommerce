@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_ecommerce/screen/home/home_screen.dart';
 
 import '../../../constants.dart';
-import '../../../screen/sign_in/sign_in_screen.dart';
 import '../../../size_config.dart';
 import '../../../components/default_button.dart';
 import './splash_content.dart';
