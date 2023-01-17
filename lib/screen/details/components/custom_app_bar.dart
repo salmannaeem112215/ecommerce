@@ -16,7 +16,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       child: Padding(
         padding: EdgeInsets.symmetric(
           horizontal: getProportionalScreenWidth(20),
-          vertical: getProportionalScreenWidth(10),
+          // vertical: getProportionalScreenWidth(10),
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
