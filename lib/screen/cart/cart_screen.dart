@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import './components/body.dart';
+import './components/check_our_card.dart';
 
 class CartScreen extends StatelessWidget {
   const CartScreen({super.key});
@@ -11,6 +12,7 @@ class CartScreen extends StatelessWidget {
     return Scaffold(
       appBar: buildAppBar(context),
       body: const Body(),
+      bottomNavigationBar: CheckOurCard(),
     );
   }
 
