@@ -1,5 +1,3 @@
-import 'dart:js';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_ecommerce/screen/cart/cart_screen.dart';
 import 'package:flutter_ecommerce/screen/profhile/profhile_screen.dart';
