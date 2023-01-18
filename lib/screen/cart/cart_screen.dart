@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ecommerce/models/cart.dart';
+// import 'package:flutter_svg/flutter_svg.dart';
+import 'package:rive/rive.dart';
 
 import './components/body.dart';
 import './components/check_our_card.dart';
@@ -32,15 +34,20 @@ class _CartScreenState extends State<CartScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: buildAppBar(context),
-      body: Body(
-        removeCartItem: _removeCartItem,
-      ),
+      body: (demoCart.isNotEmpty)
+          ? Body(
+              removeCartItem: _removeCartItem,
+            )
+          : Container(
+              child: Center(
+                  // child: Image.asset(name),
+                  ),
+            ),
       bottomNavigationBar: CheckOurCard(total: getTotal()),
     );
   }
 
   AppBar buildAppBar(BuildContext context) {
-    final int items = demoCart.length;
     return AppBar(
       title: Column(
         children: [

@@ -31,6 +31,7 @@ dependencies:
   cupertino_icons: ^1.0.3
   flutter_svg: ^1.1.6 # help us to use SVG in our app
   provider: ^6.0.5 # for State management
+  rive: ^0.10.1
 
 
 dev_dependencies:
@@ -53,6 +54,7 @@ flutter:
   assets:
     - assets/images/
     - assets/icons/
+    - assets/rive/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
