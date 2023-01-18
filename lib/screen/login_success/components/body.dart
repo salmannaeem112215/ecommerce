@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ecommerce/screen/home/home_screen.dart';
+import '../../../screen/home/home_screen.dart';
 
 import '../../../components/default_button.dart';
 import '../../../size_config.dart';
@@ -25,9 +25,13 @@ class Body extends StatelessWidget {
         SizedBox(
           width: SizeConfig.screenWidth * 0.6,
           child: DefaultButton(
-            text: 'Back to Home',
-            press: () => Navigator.pushNamed(context, HomeScreen.routeName),
-          ),
+              text: 'Back to Home',
+              press: () {
+                // Navigator.popUntil(
+                //     context, ModalRoute.withName(SplashScreen.routeName));
+                // Navigator.popAndPushNamed(context, HomeScreen.routeName);
+                Navigator.pushNamed(context, HomeScreen.routeName);
+              }),
         ),
       ],
     );

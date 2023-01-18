@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_ecommerce/screen/home/home_screen.dart';
 
 import '../../../components/default_button.dart';
 import '../../../components/form_error.dart';
@@ -57,7 +58,9 @@ class _OPTFormState extends State<OPTForm> {
   }
 
   void confirmOtp() {
-    if (_formKey.currentState!.validate()) {}
+    if (_formKey.currentState!.validate()) {
+      Navigator.pushNamed(context, HomeScreen.routeName);
+    }
   }
 
   bool otpMatched() {

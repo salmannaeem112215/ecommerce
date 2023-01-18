@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ecommerce/enums.dart';
 
+import '../../components/custom_bottom_nav_bar.dart';
 import './components/body.dart';
 
 class ProfhileScreen extends StatelessWidget {
@@ -13,6 +15,9 @@ class ProfhileScreen extends StatelessWidget {
         title: const Text('Profhile'),
       ),
       body: const Body(),
+      bottomNavigationBar: const CustomBottomNavBar(
+        selectedMenu: MenuState.profhile,
+      ),
     );
   }
 }
