@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ecommerce/screen/cart/cart_screen.dart';
 
 import './screen/complete_profhile/complete_profhile.dart';
 import './screen/login_success/login_success_screen.dart';
@@ -20,4 +21,5 @@ final Map<String, WidgetBuilder> routes = {
   OTPScreen.routeName: (context) => const OTPScreen(),
   HomeScreen.routeName: (context) => const HomeScreen(),
   DetailsScreen.routeName: (context) => const DetailsScreen(),
+  CartScreen.routeName: (context) => const CartScreen(),
 };
