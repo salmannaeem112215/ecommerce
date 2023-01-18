@@ -32,12 +32,11 @@ class _CartScreenState extends State<CartScreen> {
 
   @override
   Widget build(BuildContext context) {
-    print(demoCart.isNotEmpty);
     return Scaffold(
       appBar: buildAppBar(context),
       body: (demoCart.isNotEmpty)
           ? Body(removeCartItem: _removeCartItem)
-          : EmptyCart(),
+          : const EmptyCart(),
       bottomNavigationBar: (demoCart.isNotEmpty)
           ? CheckOurCard(total: getTotal())
           : const SizedBox(),

@@ -58,7 +58,7 @@ class Body extends StatelessWidget {
 }
 
 class ColorDots extends StatefulWidget {
-  const ColorDots({Key? key, required this.product});
+  const ColorDots({super.key, required this.product});
 
   final Product product;
 
@@ -86,7 +86,7 @@ class _ColorDotsState extends State<ColorDots> {
               }),
             ),
           ),
-          Spacer(),
+          const Spacer(),
           RoundedIcnButton(
             press: () {},
             icon: Icons.remove,
