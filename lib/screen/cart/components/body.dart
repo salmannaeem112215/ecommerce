@@ -5,14 +5,10 @@ import '../../../models/cart.dart';
 import '../../../size_config.dart';
 import './cart_item_card.dart';
 
-class Body extends StatefulWidget {
-  const Body({super.key});
+class Body extends StatelessWidget {
+  const Body({super.key, required this.removeCartItem});
+  final Function removeCartItem;
 
-  @override
-  State<Body> createState() => _BodyState();
-}
-
-class _BodyState extends State<Body> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -38,11 +34,7 @@ class _BodyState extends State<Body> {
                         SvgPicture.asset("assets/icons/Trash.svg"),
                       ],
                     )),
-                onDismissed: (direction) {
-                  setState(() {
-                    demoCart.removeAt(index);
-                  });
-                },
+                onDismissed: (direction) => removeCartItem(index),
                 child: CartItemCard(cart: demoCart[index]),
               ),
             ),
