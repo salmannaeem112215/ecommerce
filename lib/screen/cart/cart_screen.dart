@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ecommerce/models/cart.dart';
-// import 'package:flutter_svg/flutter_svg.dart';
-import 'package:rive/rive.dart';
 
+import '../../../models/cart.dart';
 import './components/body.dart';
 import './components/check_our_card.dart';
+import './components/empty_cart.dart';
 
 class CartScreen extends StatefulWidget {
   const CartScreen({super.key});
@@ -18,6 +17,7 @@ class _CartScreenState extends State<CartScreen> {
   int items = demoCart.length;
   void _removeCartItem(int index) {
     setState(() {
+      items = demoCart.length;
       demoCart.removeAt(index);
     });
   }
@@ -32,18 +32,15 @@ class _CartScreenState extends State<CartScreen> {
 
   @override
   Widget build(BuildContext context) {
+    print(demoCart.isNotEmpty);
     return Scaffold(
       appBar: buildAppBar(context),
       body: (demoCart.isNotEmpty)
-          ? Body(
-              removeCartItem: _removeCartItem,
-            )
-          : Container(
-              child: Center(
-                  // child: Image.asset(name),
-                  ),
-            ),
-      bottomNavigationBar: CheckOurCard(total: getTotal()),
+          ? Body(removeCartItem: _removeCartItem)
+          : EmptyCart(),
+      bottomNavigationBar: (demoCart.isNotEmpty)
+          ? CheckOurCard(total: getTotal())
+          : const SizedBox(),
     );
   }
 

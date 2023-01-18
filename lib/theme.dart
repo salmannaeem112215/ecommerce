@@ -42,6 +42,12 @@ TextTheme textTheme() {
   );
 }
 
+const TextStyle kLargeText = TextStyle(
+  color: kTextColor,
+  fontSize: 45,
+  fontWeight: FontWeight.bold,
+);
+
 AppBarTheme appBarTheme() {
   return const AppBarTheme(
     backgroundColor: Colors.white,
