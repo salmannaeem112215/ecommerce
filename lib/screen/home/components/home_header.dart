@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ecommerce/models/cart.dart';
 import 'package:flutter_ecommerce/screen/cart/cart_screen.dart';
+import 'package:flutter_ecommerce/screen/profhile/profhile_screen.dart';
 import 'package:flutter_ecommerce/size_config.dart';
 
 import './search_field.dart';
@@ -27,7 +28,7 @@ class HomeHeader extends StatelessWidget {
           IcnBtnWithCounter(
             count: "3",
             svgIcon: 'assets/icons/Bell.svg',
-            press: () {},
+            press: () => Navigator.pushNamed(context, ProfhileScreen.routeName),
           ),
         ],
       ),
